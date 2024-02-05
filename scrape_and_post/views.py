@@ -16,19 +16,19 @@ def hello_world():
     return "Laba diena."
 
 # run scraping codes
-@app.route('/scrape')
+@app.route('/scrape_new_data')
 def scrape_results():
     run_scrape_codes()
     return "New data was scraped."
     
-@app.route('/scrape_html')
-def scrape_results2():
+@app.route('/view_scraped_data')
+def show_scrape_results():
     df_html = output_scraped_data().to_html()
-    resp = make_response(render_template_string(df_html))
-    return resp
+    # resp = make_response(render_template_string(df_html))
+    return df_html
 
-@app.route('/scrape2')
-def scrape2():
+@app.route('/csv_exists')
+def csv_exists():
     return str(os.path.isfile("./scrape_and_post/data/scraped_data.csv"))
 
 @app.route('/dirs')
