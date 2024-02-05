@@ -1,7 +1,15 @@
 ### Description
 Code scrapes websites, extracts specific information and then publishes it on a small website
 
-### Code run sequence:
-1. see if website request returns 200
-2. scrape data and add date time information when it was performed
-3. save data from 2. into a list
+### What code does:
+1. Website is created using Flask
+2. After server and website is initiated, run src/run_codes.py see if website request returns 200
+3. Scrape data and add date time information when it was performed
+4. Save data from previous step into a csv file
+5. Publish latest data to website
+
+### Running Flask:
+as per: https://flask.palletsprojects.com/en/2.0.x/patterns/packages/
+`export FLASK_APP=yourapplication`
+`pip install -e .`
+`flask run`

@@ -10,15 +10,15 @@ strings_to_find = ["Helly Hansen Daybreaker Fleece Jacke - Herren - spruce",
                    "Helly Hansen Daybreaker Fleece Jacke - Herren - schwarz"]
 
 # === append scraped data to scraped_data.csv
-if os.path.isfile(os.getcwd() + "/scraped_data.csv") == True:
-    with open("scraped_data.csv", 'a', newline='') as csv_file:
+if os.path.isfile("./data/scraped_data.csv") == True:
+    with open("./data/scraped_data.csv", 'a', newline='') as csv_file:
         scraped_data = [scrapeAirZermatt(strings_to_find[0]),
                         scrapeAirZermatt(strings_to_find[1]),
                         scrapeCaranDache()]
         writer = csv.writer(csv_file)
         writer.writerows(scraped_data)
 else:
-    with open("scraped_data.csv", 'w', newline='') as csv_file:
+    with open("./data/scraped_data.csv", 'w', newline='') as csv_file:
         scraped_data = [["item", "scrape_datetime", "price"],
                         scrapeAirZermatt(strings_to_find[0]),
                         scrapeAirZermatt(strings_to_find[1]),
