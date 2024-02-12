@@ -10,6 +10,6 @@ Code scrapes websites, extracts specific information and then publishes it on a 
 
 ### Running Flask:
 as per: https://flask.palletsprojects.com/en/2.0.x/patterns/packages/
-`export FLASK_APP=yourapplication`
+`export FLASK_APP=scrape_and_post`
 `pip install -e .`
 `flask run`
