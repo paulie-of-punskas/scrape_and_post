@@ -7,15 +7,22 @@ import unittest
 
 class TestAirZermatt(unittest.TestCase):
 
-    def test_old_string(self):
+    def test_old_strings(self):
         strings_to_find = ["Helly Hansen Daybreaker Fleece Jacke - Herren - spruce", 
                    "Helly Hansen Daybreaker Fleece Jacke - Herren - schwarz"]
-        self.assertEqual(scrapeAirZermatt(strings_to_find[0]), "No price was found for Helly Hansen Daybreaker Fleece Jacke - Herren - spruce.")
-        self.assertEqual(scrapeAirZermatt(strings_to_find[1]), "No price was found for Helly Hansen Daybreaker Fleece Jacke - Herren - schwarz.")
+        scrape_result_1 = scrapeAirZermatt(strings_to_find[0])
+        self.assertEqual(scrape_result_1[0], "Helly Hansen Daybreaker Fleece Jacke - Herren - spruce")
+        self.assertEqual(scrape_result_1[2], "No price found or scraping error")
+        # , '2024-05-07 19:06:26', 'No price found or scraping error'))
+        scrape_result_2 = scrapeAirZermatt(strings_to_find[1])
+        self.assertEqual(scrape_result_2[0], "Helly Hansen Daybreaker Fleece Jacke - Herren - schwarz")
+        self.assertEqual(scrape_result_2[2], "No price found or scraping error")
 
     def test_new_string(self):
         strings_to_find = "Helly Hansen Fleece Jacke - Herren - spruce"
-        self.assertTrue(scrapeAirZermatt(strings_to_find) != "No price was found for Helly Hansen Daybreaker Fleece Jacke - Herren - spruce.")
+        scrape_result_3 = scrapeAirZermatt(strings_to_find)
+        self.assertTrue(scrape_result_3[0] == strings_to_find)
+        self.assertTrue(scrape_result_3[2] != "No price found or scraping error")
 
 # print(scrapeAirZermatt(strings_to_find[0]))
 # print(scrapeAirZermatt(strings_to_find[1]))
