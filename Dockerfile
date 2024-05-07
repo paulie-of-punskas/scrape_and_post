@@ -1,5 +1,9 @@
 FROM python:3.9.6
 
+# Keeps Python from buffering stdout and stderr to avoid situations where
+# the application crashes without emitting any logs due to buffering.
+ENV PYTHONUNBUFFERED=1
+
 COPY ./requirements.txt /app/requirements.txt
 
 WORKDIR /app
