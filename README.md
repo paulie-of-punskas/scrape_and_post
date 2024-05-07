@@ -20,8 +20,9 @@ As per README.Docker.md:
 - run app on 5001 port: `docker run -p 5001:5000 -d scrape_and_post`
 
 #### Alternative way, to run it on port 5001:
-`docker build --tag scrape_and_post .`
-`docker run -p 5000:5000 -d scrape_and_post` or `docker run -p 5001:5000 -d scrape_and_post`
+- `docker build --tag scrape_and_post .`
+    - `docker run -p 5000:5000 -d scrape_and_post` or 
+    - `docker run -p 5001:5000 -d scrape_and_post`
 
 ## View app logs:
 - get running containers: `docker ps`
