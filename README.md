@@ -24,6 +24,10 @@ As per README.Docker.md:
     - `docker run -p 5000:5000 -d scrape_and_post` or 
     - `docker run -p 5001:5000 -d scrape_and_post`
 
+### Running tests:
+- navigate to `./scrape_and_post/scrape_and_post`
+- example unit test call: `python3 -m unittest tests.test_scrape_air_zermatt`
+
 ## View app logs:
 - get running containers: `docker ps`
 - get logs of running container: `docker logs ####`
