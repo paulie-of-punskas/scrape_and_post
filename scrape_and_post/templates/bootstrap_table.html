@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>item</th>
+        <th>latest_scrape_datetime</th>
+        <th>newest_price</th>
+        <th>avg_price</th>
+        <th>price_lowered</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for rows in pandas_table %}
+        <tr>
+          <td>{{ rows }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
