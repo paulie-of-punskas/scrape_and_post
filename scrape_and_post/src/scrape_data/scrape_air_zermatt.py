@@ -27,10 +27,11 @@ def scrapeAirZermatt(search_string):
         # print(soup.find_all("div", attrs={"id": "article_price_304"}))
         scraped_html_code = soup.find_all("div", attrs={"title": search_string})
         if len(scraped_html_code) == 0:
-            return f"No price was found for {search_string}."
+            scraped_data = (search_string, scrape_datetime, "No price found or scraping error")
+            print(f"No price was found for {search_string}.")
         else:
             print(">> Successfully scraped air-zermatt.ch")
             price = scraped_html_code[0].find_all("span", attrs={"class": "price_value"})
             # scraped_data = {"item": search_string, "scrape_datetime": scrape_datetime, "price": price[0].get_text()}
             scraped_data = (search_string, scrape_datetime, price[0].get_text())
-            return scraped_data
+        return scraped_data
