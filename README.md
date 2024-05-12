@@ -20,6 +20,7 @@ As per README.Docker.md:
 - run app on 5001 port: `docker run -p 5001:5000 -d scrape_and_post`
 
 #### Alternative way, to run it on port 5001:
+- `flask run -h localhost -p 5001`
 - `docker build --tag scrape_and_post .`
     - `docker run -p 5000:5000 -d scrape_and_post` or 
     - `docker run -p 5001:5000 -d scrape_and_post`
@@ -39,3 +40,4 @@ As per README.Docker.md:
 - update string following strings, to regex pattern:
     - Helly Hansen Daybreaker Fleece Jacke - Herren - spruce
     - Helly Hansen Fleece Jacke - Herren - spruce
+- add [SIX APIs](https://web.apiportal.six-group.com/portal/bfi/catalog)
