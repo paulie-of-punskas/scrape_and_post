@@ -10,9 +10,9 @@ Code scrapes websites, extracts specific information and then publishes it on a 
 
 ### Running locally:
 as per: https://flask.palletsprojects.com/en/2.0.x/patterns/packages/
-`export FLASK_APP=scrape_and_post`
-`pip install -e .`
-`flask run`
+- `export FLASK_APP=scrape_and_post`
+- `pip install -e .`
+- `flask run -h localhost -p 5001`
 
 ### Running in Docker container:
 As per README.Docker.md: 
@@ -20,7 +20,6 @@ As per README.Docker.md:
 - run app on 5001 port: `docker run -p 5001:5000 -d scrape_and_post`
 
 #### Alternative way, to run it on port 5001:
-- `flask run -h localhost -p 5001`
 - `docker build --tag scrape_and_post .`
     - `docker run -p 5000:5000 -d scrape_and_post` or 
     - `docker run -p 5001:5000 -d scrape_and_post`
