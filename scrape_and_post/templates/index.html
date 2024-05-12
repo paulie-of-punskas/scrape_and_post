@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Labas</title>
+    </head>
+    <body>
+        <h1>Laba diena, dabar yra: </h1>
+        {{ current_datetime }}
+        <h1>Produktu kainos:</h1>
+        <table id="data" class="table table-striped">
+          <thead>
+            <tr>
+              {% for column in df.columns.values %}
+              <th>{{ column }}</th>
+              {% endfor %}
+            </tr>
+          </thead>
+          <tbody>
+            {% for row in df_as_list %}
+            <tr>
+                {% for column, row_ in zip(df.columns.values, row) %}
+                <td>{{row_}}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+    </body>
+</html>

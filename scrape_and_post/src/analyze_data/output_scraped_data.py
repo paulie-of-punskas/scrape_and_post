@@ -21,6 +21,6 @@ def output_scraped_data():
     new_df = pd.merge(left=csv_file_grouped, right=avg_price, on="item")
     new_df = new_df[["item", "latest_scrape_datetime", "newest_price", "avg_price"]]
 
-    new_df["price_lowered"] = new_df.apply(lambda x: "True" if x["newest_price"] < x["avg_price"] else "False", axis=1)
+    new_df["price_lowered"] = new_df.apply(lambda x: True if x["newest_price"] < x["avg_price"] else False, axis=1)
     # return jsonify(new_df.to_dict(orient="records"))
     return new_df
