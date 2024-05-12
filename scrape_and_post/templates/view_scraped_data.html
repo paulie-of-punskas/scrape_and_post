@@ -1,0 +1,22 @@
+<html>
+    <title>View scraped data</title>
+    <h1>Scraped data summary:</h1>
+    <table id="data" class="table table-striped">
+        <thead>
+          <tr>
+            {% for column in df.columns.values %}
+            <th>{{ column }}</th>
+            {% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in df_as_list %}
+          <tr>
+              {% for column, row_ in zip(df.columns.values, row) %}
+              <td>{{ row_ }}</td>
+              {% endfor %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+</html>
