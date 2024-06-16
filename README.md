@@ -36,7 +36,7 @@ As per README.Docker.md:
 - endpoint `/scrape_new_data` returns error
 
 ### To do:
-- update string following strings, to regex pattern:
-    - Helly Hansen Daybreaker Fleece Jacke - Herren - spruce
-    - Helly Hansen Fleece Jacke - Herren - spruce
+- ~~update string following strings, to regex pattern~~:
+    - ~~Helly Hansen Daybreaker Fleece Jacke - Herren - spruce~~
+    - ~~Helly Hansen Fleece Jacke - Herren - spruce~~
 - add [SIX APIs](https://web.apiportal.six-group.com/portal/bfi/catalog)
