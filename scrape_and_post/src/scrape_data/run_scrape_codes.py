@@ -8,11 +8,13 @@ from scrape_and_post.src.scrape_data.scrape_caran_dache import scrapeCaranDache
 def run_scrape_codes():
     strings_to_find = ["Helly Hansen Daybreaker Fleece Jacke - Herren - spruce",
                        "Helly Hansen Daybreaker Fleece Jacke - Herren - schwarz",
-                       "Helly Hansen Fleece Jacke - Herren - spruce"]
+                       "Helly Hansen Fleece Jacke - Herren - spruce",
+                       "Helly Hansen Fleece Jacke - Herren - schwarz"]
 
     scraped_data = [scrapeAirZermatt(strings_to_find[0]),
                     scrapeAirZermatt(strings_to_find[1]),
                     scrapeAirZermatt(strings_to_find[2]),
+                    scrapeAirZermatt(strings_to_find[3]),
                     scrapeCaranDache()]
     # === append scraped data, append new information and save it as scraped_data.csv
     if os.path.isfile("./scrape_and_post/data/scraped_data.csv") == True:
