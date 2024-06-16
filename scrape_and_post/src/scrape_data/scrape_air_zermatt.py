@@ -27,7 +27,7 @@ def scrapeAirZermatt(search_string):
         # print(soup.find_all("div", attrs={"id": "article_price_304"}))
         scraped_html_code = soup.find_all("div", attrs={"title": search_string})
         if len(scraped_html_code) == 0:
-            scraped_data = (search_string, scrape_datetime, "No price found or scraping error")
+            scraped_data = (search_string, scrape_datetime, 69)
             print(f"No price was found for {search_string}.")
         else:
             print(">> Successfully scraped air-zermatt.ch")
