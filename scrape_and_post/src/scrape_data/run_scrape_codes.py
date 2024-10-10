@@ -16,6 +16,7 @@ def run_scrape_codes():
                     scrapeAirZermatt(strings_to_find[2]),
                     scrapeAirZermatt(strings_to_find[3]),
                     scrapeCaranDache()]
+
     # === append scraped data, append new information and save it as scraped_data.csv
     if os.path.isfile("./scrape_and_post/data/scraped_data.csv") == True:
         with open("./scrape_and_post/data/scraped_data.csv", 'a', newline='') as csv_file:
