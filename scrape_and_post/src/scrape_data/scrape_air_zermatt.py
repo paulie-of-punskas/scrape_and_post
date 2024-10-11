@@ -31,7 +31,10 @@ def scrapeAirZermatt(search_string):
             print(f"No price was found for {search_string}.")
         else:
             print(">> Successfully scraped air-zermatt.ch")
-            price = scraped_html_code[0].find_all("span", attrs={"class": "price_value"})
+            prices :list = scraped_html_code[0].find_all("span", attrs={"class": "price_value"})
             # scraped_data = {"item": search_string, "scrape_datetime": scrape_datetime, "price": price[0].get_text()}
-            scraped_data = (search_string, scrape_datetime, price[0].get_text())
+            # prices will be returned as a list with two elements,
+            extracted_prices = map(lambda price: price.get_text(), prices)
+            # return smallest value, found in extracted_prices
+            scraped_data = (search_string, scrape_datetime, min([*map(float, extracted_prices)]))
         return scraped_data
